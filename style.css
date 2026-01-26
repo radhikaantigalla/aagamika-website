@@ -28,7 +28,7 @@ body {
   color: #fff;
   text-decoration: none;
   font-size: 14px;
-  opacity: 0.8;
+  opacity: 0.85;
 }
 
 /* HERO */
@@ -42,31 +42,38 @@ body {
   overflow: hidden;
 }
 
-/* BACKGROUND LOGO */
+/* BIG BRIGHT CENTER LOGO */
 .hero::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: url("./images/aagamika-logo.png") center center no-repeat;
-  background-size: 520px;
-  opacity: 0.08;
+  background: url("./images/aagamika-logo.png") center 25% no-repeat; /* slightly higher to make space for tagline */
+  background-size: 620px;
+  opacity: 1; /* full brightness like top logo */
   z-index: 1;
 }
 
+/* Optional soft glow for luxury feel */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, rgba(255,215,150,0.2) 0%, transparent 70%);
+  z-index: 1;
+}
+
+/* TAGLINE BELOW BIG LOGO */
 .hero-text {
   position: relative;
   z-index: 2;
 }
 
-.hero-text h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 64px;
-}
-
-.hero-text p {
-  margin-top: 12px;
-  font-size: 18px;
-  opacity: 0.85;
+.hero-tagline {
+  font-size: 22px;
+  font-weight: 400;
+  opacity: 0.95;
+  margin-top: 420px; /* push tagline below logo */
+  font-family: 'Poppins', sans-serif;
 }
 
 /* SEO TEXT */
@@ -96,7 +103,7 @@ body {
 
 .product-card img {
   width: 100%;
-  max-width: 260px;
+  max-width: 240px;
   height: auto;
   border-radius: 12px;
   margin: 0 auto;
@@ -171,7 +178,7 @@ body {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* MOBILE FIXES */
+/* 📱 MOBILE FIXES */
 @media (max-width: 768px) {
   .header {
     flex-direction: column;
@@ -182,21 +189,15 @@ body {
     height: 60px;
   }
 
-  .social {
-    margin-top: 5px;
-  }
-
   .hero::before {
-    background-size: 340px;
-    opacity: 0.12;
+    background-size: 380px;
+    background-position: center 30%; /* adjust vertical for mobile */
+    opacity: 1;
   }
 
-  .hero-text h1 {
-    font-size: 42px;
-  }
-
-  .hero-text p {
+  .hero-tagline {
     font-size: 16px;
+    margin-top: 280px; /* adjust tagline below logo for mobile */
   }
 
   .products {
@@ -204,6 +205,6 @@ body {
   }
 
   .product-card img {
-    max-width: 220px;
+    max-width: 210px;
   }
 }
