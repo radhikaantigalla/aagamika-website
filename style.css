@@ -5,6 +5,7 @@
   box-sizing: border-box;
 }
 
+/* BASE */
 body {
   font-family: 'Poppins', sans-serif;
   background: #000;
@@ -26,7 +27,8 @@ body {
 .social a {
   color: #fff;
   text-decoration: none;
-  font-weight: 500;
+  font-size: 14px;
+  opacity: 0.8;
 }
 
 /* HERO */
@@ -40,7 +42,7 @@ body {
   overflow: hidden;
 }
 
-/* BIG LOGO BACKGROUND */
+/* BACKGROUND LOGO */
 .hero::before {
   content: "";
   position: absolute;
@@ -51,7 +53,6 @@ body {
   z-index: 1;
 }
 
-/* HERO TEXT */
 .hero-text {
   position: relative;
   z-index: 2;
@@ -60,18 +61,17 @@ body {
 .hero-text h1 {
   font-family: 'Playfair Display', serif;
   font-size: 64px;
-  letter-spacing: 2px;
 }
 
 .hero-text p {
-  margin-top: 15px;
+  margin-top: 12px;
   font-size: 18px;
   opacity: 0.85;
 }
 
 /* SEO TEXT */
 .seo-text {
-  padding: 60px 20px;
+  padding: 50px 20px;
   max-width: 900px;
   margin: auto;
   text-align: center;
@@ -89,24 +89,28 @@ body {
 
 .product-card {
   background: #111;
-  padding: 20px;
-  border-radius: 12px;
+  padding: 25px;
+  border-radius: 14px;
   text-align: center;
 }
 
 .product-card img {
   width: 100%;
-  border-radius: 10px;
+  max-width: 260px;
+  height: auto;
+  border-radius: 12px;
+  margin: 0 auto;
 }
 
 .product-card h3 {
-  margin: 15px 0;
+  margin: 18px 0;
   font-family: 'Playfair Display', serif;
 }
 
+/* WHATSAPP BUTTON */
 .wa-btn {
   display: inline-block;
-  padding: 10px 20px;
+  padding: 10px 22px;
   background: #c9a24d;
   color: #000;
   text-decoration: none;
@@ -141,7 +145,7 @@ body {
   bottom: 20px;
   background: #25D366;
   color: #000;
-  font-size: 28px;
+  font-size: 26px;
   padding: 14px 18px;
   border-radius: 50%;
   text-decoration: none;
@@ -167,12 +171,24 @@ body {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* ✅ MOBILE FIX */
+/* MOBILE FIXES */
 @media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .logo {
+    height: 60px;
+  }
+
+  .social {
+    margin-top: 5px;
+  }
 
   .hero::before {
     background-size: 340px;
-    opacity: 0.12;   /* more visible on mobile */
+    opacity: 0.12;
   }
 
   .hero-text h1 {
@@ -183,7 +199,11 @@ body {
     font-size: 16px;
   }
 
-  .logo {
-    height: 55px;
+  .products {
+    padding: 40px 20px;
+  }
+
+  .product-card img {
+    max-width: 220px;
   }
 }
