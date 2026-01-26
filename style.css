@@ -1,4 +1,4 @@
-/* ---------- GLOBAL ---------- */
+/* RESET */
 * {
   margin: 0;
   padding: 0;
@@ -7,22 +7,154 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background: #fff;
-  color: #333;
-  line-height: 1.6;
-  overflow-x: hidden;
+  background: #000;
+  color: #fff;
 }
 
-/* ---------- ANIMATIONS ---------- */
+/* HEADER */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+}
+
+.logo {
+  height: 70px;
+}
+
+.social a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* BIG LOGO BACKGROUND */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("./images/aagamika-logo.png") center center no-repeat;
+  background-size: 520px;
+  opacity: 0.08;
+  z-index: 1;
+}
+
+/* HERO TEXT */
+.hero-text {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-text h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 64px;
+  letter-spacing: 2px;
+}
+
+.hero-text p {
+  margin-top: 15px;
+  font-size: 18px;
+  opacity: 0.85;
+}
+
+/* SEO TEXT */
+.seo-text {
+  padding: 60px 20px;
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
+  font-size: 15px;
+  opacity: 0.75;
+}
+
+/* PRODUCTS */
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 40px;
+  padding: 60px 40px;
+}
+
+.product-card {
+  background: #111;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.product-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.product-card h3 {
+  margin: 15px 0;
+  font-family: 'Playfair Display', serif;
+}
+
+.wa-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #c9a24d;
+  color: #000;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 500;
+}
+
+/* ABOUT */
+.about {
+  padding: 80px 20px;
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
+}
+
+.about h2 {
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 20px;
+}
+
+/* FOOTER */
+.footer {
+  padding: 30px;
+  text-align: center;
+  opacity: 0.6;
+}
+
+/* FLOATING WHATSAPP */
+.whatsapp-float {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  background: #25D366;
+  color: #000;
+  font-size: 28px;
+  padding: 14px 18px;
+  border-radius: 50%;
+  text-decoration: none;
+  z-index: 999;
+}
+
+/* ANIMATIONS */
 .fade-in {
-  animation: fadeIn 1.4s ease forwards;
+  animation: fadeIn 1.2s ease forwards;
 }
 
 .reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  animation: reveal 1.2s ease forwards;
-  animation-delay: 0.3s;
+  animation: revealUp 1.2s ease forwards;
 }
 
 @keyframes fadeIn {
@@ -30,211 +162,28 @@ body {
   to { opacity: 1; }
 }
 
-@keyframes reveal {
-  to {
-    opacity: 1;
-    transform: translateY(0);
+@keyframes revealUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ✅ MOBILE FIX */
+@media (max-width: 768px) {
+
+  .hero::before {
+    background-size: 340px;
+    opacity: 0.12;   /* more visible on mobile */
   }
-}
 
-/* ---------- HEADER ---------- */
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 40px;
-  background: linear-gradient(90deg, #7b1e3c, #b8325a);
-}
+  .hero-text h1 {
+    font-size: 42px;
+  }
 
-.logo {
-  height: 60px;
-}
+  .hero-text p {
+    font-size: 16px;
+  }
 
-.social a {
-  text-decoration: none;
-  color: #fff;
-  font-weight: 500;
-  transition: opacity 0.3s;
-}
-
-.social a:hover {
-  opacity: 0.8;
-}
-
-/* ---------- HERO ---------- */
-/* ---------- HERO ---------- */
-.hero {
-  height: 85vh;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
-              url("./images/aagamika-logo.png") center/contain no-repeat;
-  background-position: center;
-  background-size: 50%; /* adjust size of logo watermark */
-  text-align: center;
-}
-
-.hero-text {
-  position: relative; /* ensures text is above background */
-  color: #fff;
-  z-index: 1;
-}
-
-.hero-text h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 52px;
-  letter-spacing: 1px;
-}
-
-.hero-text p {
-  margin-top: 12px;
-  font-size: 18px;
-  letter-spacing: 0.5px;
-}
-
-@keyframes heroText {
-  0% { opacity: 0; transform: translateY(20px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-
-/* ---------- SEO TEXT ---------- */
-.seo-text {
-  max-width: 900px;
-  margin: 60px auto;
-  padding: 0 24px;
-  font-size: 14px;
-  color: #bbb;
-  text-align: center;
-  line-height: 1.6;
-}
-
-/* ---------- PRODUCTS ---------- */
-.products {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 40px;
-  padding: 80px 60px;
-}
-
-.product-card {
-  text-align: center;
-  background: #fff;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-  transition: transform 0.4s, box-shadow 0.4s;
-}
-
-.product-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-}
-
-.product-card img {
-  width: 100%;
-  height: 280px;
-  object-fit: cover;
-  border-radius: 12px;
-}
-
-.product-card h3 {
-  margin: 16px 0;
-  font-family: 'Playfair Display', serif;
-  color: #7b1e3c;
-}
-
-.wa-btn {
-  display: inline-block;
-  padding: 10px 22px;
-  border-radius: 30px;
-  background: #25d366;
-  color: #fff;
-  text-decoration: none;
-  font-size: 14px;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.wa-btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 5px 20px rgba(37,211,102,0.5);
-  animation: pulse 1s infinite;
-}
-
-/* ---------- ABOUT ---------- */
-.about {
-  max-width: 900px;
-  margin: 100px auto;
-  padding: 0 24px;
-  text-align: center;
-}
-
-.about h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 32px;
-  color: #7b1e3c;
-  margin-bottom: 20px;
-}
-
-.about p {
-  font-size: 16px;
-  line-height: 1.8;
-  color: #444;
-}
-
-.about strong {
-  color: #7b1e3c;
-  font-weight: 600;
-}
-
-.about.reveal {
-  opacity: 1 !important;
-  transform: none !important;
-}
-
-/* ---------- FOOTER ---------- */
-.footer {
-  text-align: center;
-  padding: 30px;
-  font-size: 14px;
-  color: #fff;
-  background: #7b1e3c;
-}
-
-/* ---------- FLOATING WHATSAPP ---------- */
-.whatsapp-float {
-  position: fixed;
-  bottom: 24px;
-  right: 24px;
-  background: #25d366;
-  color: #fff;
-  width: 54px;
-  height: 54px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 24px;
-  text-decoration: none;
-  box-shadow: 0 10px 25px rgba(0,0,0,.25);
-  animation: floatPulse 2s infinite;
-  transition: transform 0.3s;
-}
-
-.whatsapp-float:hover {
-  transform: scale(1.1);
-}
-
-/* ---------- ANIMATIONS ---------- */
-@keyframes pulse {
-  0% { box-shadow: 0 0 0 rgba(37,211,102,0.7); }
-  50% { box-shadow: 0 0 20px rgba(37,211,102,0.7); }
-  100% { box-shadow: 0 0 0 rgba(37,211,102,0.7); }
-}
-
-@keyframes floatPulse {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-5px); }
-  100% { transform: translateY(0); }
+  .logo {
+    height: 55px;
+  }
 }
