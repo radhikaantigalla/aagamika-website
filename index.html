@@ -1,212 +1,92 @@
-/* RESET */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
 
-body {
-  font-family: 'Poppins', sans-serif;
-  background: #000;
-  color: #fff;
-}
+  <!-- SEO META -->
+  <title>Aagamika Jewels | Handmade Jewelry Rooted in Tradition</title>
+  <meta name="description" content="Aagamika Jewels handmade jewelry – premium handcrafted Indian jewelry inspired by heritage, elegance, and luxury.">
+  <meta name="keywords" content="Aagamika Jewels handmade jewelry, handmade jewelry India, luxury handmade jewelry, temple jewelry, bridal jewelry">
+  <meta name="author" content="Aagamika Jewels">
 
-/* HEADER */
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 40px;
-}
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-.logo {
-  height: 70px;
-}
+  <!-- FONTS -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
-.social a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 14px;
-  opacity: 0.8;
-}
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
 
-/* HERO */
-.hero {
-  position: relative;
-  height: 90vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  overflow: hidden;
-}
+<body>
 
-/* BACKGROUND LOGO */
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: url("./images/aagamika-logo.png") center center no-repeat;
-  background-size: 520px;
-  opacity: 0.08;
-  z-index: 1;
-}
+<!-- HEADER -->
+<header class="header fade-in">
+  <img src="./images/aagamika-logo.png" alt="Aagamika Jewels handmade jewelry logo" class="logo">
 
-.hero-text {
-  position: relative;
-  z-index: 2;
-}
+  <nav class="social">
+    <a href="https://instagram.com/YOUR_INSTAGRAM" target="_blank">Instagram</a>
+  </nav>
+</header>
 
-.hero-text h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 64px;
-}
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-text reveal">
+    <h1>Aagamika Jewels</h1>
+    <p>Handmade Jewelry Rooted in Tradition • Crafted in Luxury</p>
+  </div>
+</section>
 
-.hero-text p {
-  margin-top: 12px;
-  font-size: 18px;
-  opacity: 0.85;
-}
+<!-- SEO SUPPORT TEXT -->
+<section class="seo-text">
+  <p>
+    Aagamika Jewels is a premium handmade jewelry brand creating timeless Indian jewelry
+    inspired by tradition, temple artistry, and heritage craftsmanship. Each piece of
+    handmade jewelry reflects elegance, culture, and modern luxury.
+  </p>
+</section>
 
-/* SEO TEXT */
-.seo-text {
-  padding: 50px 20px;
-  max-width: 900px;
-  margin: auto;
-  text-align: center;
-  font-size: 15px;
-  opacity: 0.75;
-}
+<!-- PRODUCTS -->
+<section class="products">
+  <div class="product-card reveal">
+    <img src="./images/product1.jpg" alt="Aagamika Jewels handmade temple necklace">
+    <h3>Temple Necklace</h3>
+    <a class="wa-btn" href="https://wa.me/919985171055" target="_blank">Order on WhatsApp</a>
+  </div>
 
-/* PRODUCTS */
-.products {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 40px;
-  padding: 60px 40px;
-}
+  <div class="product-card reveal">
+    <img src="./images/product2.jpg" alt="Aagamika Jewels handmade heritage earrings">
+    <h3>Heritage Earrings</h3>
+    <a class="wa-btn" href="https://wa.me/919985171055" target="_blank">Order on WhatsApp</a>
+  </div>
 
-.product-card {
-  background: #111;
-  padding: 25px;
-  border-radius: 14px;
-  text-align: center;
-}
+  <div class="product-card reveal">
+    <img src="./images/product3.jpg" alt="Aagamika Jewels handmade bridal jewelry">
+    <h3>Bridal Collection</h3>
+    <a class="wa-btn" href="https://wa.me/919985171055" target="_blank">Order on WhatsApp</a>
+  </div>
+</section>
 
-.product-card img {
-  width: 100%;
-  max-width: 260px;
-  height: auto;
-  border-radius: 12px;
-  margin: 0 auto;
-}
+<!-- ABOUT -->
+<section class="about reveal">
+  <h2>About Aagamika Jewels</h2>
+  <p>
+    <strong>Rooted in Tradition</strong>, Aagamika Jewels is a handmade jewelry brand inspired
+    by India’s rich cultural heritage. Every piece is thoughtfully handcrafted,
+    blending timeless artistry with modern luxury — created for women who value
+    elegance, meaning, and craftsmanship.
+  </p>
+</section>
 
-.product-card h3 {
-  margin: 18px 0;
-  font-family: 'Playfair Display', serif;
-}
+<!-- FOOTER -->
+<footer class="footer fade-in">
+  <p>© 2026 Aagamika Jewels</p>
+</footer>
 
-/* WHATSAPP BUTTON */
-.wa-btn {
-  display: inline-block;
-  padding: 10px 22px;
-  background: #c9a24d;
-  color: #000;
-  text-decoration: none;
-  border-radius: 30px;
-  font-weight: 500;
-}
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/919985171055" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+  💬
+</a>
 
-/* ABOUT */
-.about {
-  padding: 80px 20px;
-  max-width: 900px;
-  margin: auto;
-  text-align: center;
-}
-
-.about h2 {
-  font-family: 'Playfair Display', serif;
-  margin-bottom: 20px;
-}
-
-/* FOOTER */
-.footer {
-  padding: 30px;
-  text-align: center;
-  opacity: 0.6;
-}
-
-/* FLOATING WHATSAPP */
-.whatsapp-float {
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-  background: #25D366;
-  color: #000;
-  font-size: 26px;
-  padding: 14px 18px;
-  border-radius: 50%;
-  text-decoration: none;
-  z-index: 999;
-}
-
-/* ANIMATIONS */
-.fade-in {
-  animation: fadeIn 1.2s ease forwards;
-}
-
-.reveal {
-  animation: revealUp 1.2s ease forwards;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes revealUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* ✅ MOBILE FIXES */
-@media (max-width: 768px) {
-
-  /* HEADER CENTERED */
-  .header {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .logo {
-    height: 60px;
-  }
-
-  .social {
-    margin-top: 5px;
-  }
-
-  /* HERO */
-  .hero::before {
-    background-size: 340px;
-    opacity: 0.12;
-  }
-
-  .hero-text h1 {
-    font-size: 42px;
-  }
-
-  .hero-text p {
-    font-size: 16px;
-  }
-
-  /* PRODUCTS */
-  .products {
-    padding: 40px 20px;
-  }
-
-  .product-card img {
-    max-width: 220px;
-  }
-}
+</body>
+</html>
