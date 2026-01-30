@@ -33,47 +33,19 @@ body {
 
 /* HERO */
 .hero {
-  position: relative;
   height: 90vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  overflow: hidden;
-}
-
-/* BIG BRIGHT CENTER LOGO */
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: url("./images/aagamika-logo.png") center 25% no-repeat; /* slightly higher to make space for tagline */
+  background: url("./images/aagamika-logo.png") center 18% no-repeat;
   background-size: 620px;
-  opacity: 1; /* full brightness like top logo */
-  z-index: 1;
-}
-
-/* Optional soft glow for luxury feel */
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle, rgba(255,215,150,0.2) 0%, transparent 70%);
-  z-index: 1;
-}
-
-/* TAGLINE BELOW BIG LOGO */
-.hero-text {
-  position: relative;
-  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 120px;
 }
 
 .hero-tagline {
   font-size: 22px;
-  font-weight: 400;
   opacity: 0.95;
-  margin-top: 420px; /* push tagline below logo */
-  font-family: 'Poppins', sans-serif;
+  text-align: below center;
 }
 
 /* SEO TEXT */
@@ -86,7 +58,7 @@ body {
   opacity: 0.75;
 }
 
-/* PRODUCTS */
+/* COLLECTIONS */
 .products {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -99,43 +71,47 @@ body {
   padding: 25px;
   border-radius: 14px;
   text-align: center;
+  text-decoration: none;
+  color: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.6);
 }
 
 .product-card img {
   width: 100%;
-  max-width: 240px;
-  height: auto;
+  height: 280px;
+  object-fit: cover;
   border-radius: 12px;
-  margin: 0 auto;
+  margin-bottom: 15px;
 }
 
 .product-card h3 {
-  margin: 18px 0;
   font-family: 'Playfair Display', serif;
-}
-
-/* WHATSAPP BUTTON */
-.wa-btn {
-  display: inline-block;
-  padding: 10px 22px;
-  background: #c9a24d;
-  color: #000;
-  text-decoration: none;
-  border-radius: 30px;
-  font-weight: 500;
+  font-size: 18px;
 }
 
 /* ABOUT */
 .about {
-  padding: 80px 20px;
+  padding: 100px 20px;
   max-width: 900px;
-  margin: auto;
+  margin: 80px auto 0;
   text-align: center;
+  border-top: 1px solid rgba(255,255,255,0.08);
 }
 
 .about h2 {
   font-family: 'Playfair Display', serif;
-  margin-bottom: 20px;
+  font-size: 30px;
+  margin-bottom: 24px;
+}
+
+.about p {
+  font-size: 16px;
+  opacity: 0.8;
 }
 
 /* FOOTER */
@@ -150,35 +126,20 @@ body {
   position: fixed;
   right: 20px;
   bottom: 20px;
+  width: 56px;
+  height: 56px;
   background: #25D366;
   color: #000;
   font-size: 26px;
-  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 50%;
   text-decoration: none;
   z-index: 999;
 }
 
-/* ANIMATIONS */
-.fade-in {
-  animation: fadeIn 1.2s ease forwards;
-}
-
-.reveal {
-  animation: revealUp 1.2s ease forwards;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes revealUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* 📱 MOBILE FIXES */
+/* MOBILE */
 @media (max-width: 768px) {
   .header {
     flex-direction: column;
@@ -189,22 +150,19 @@ body {
     height: 60px;
   }
 
-  .hero::before {
-    background-size: 380px;
-    background-position: center 30%; /* adjust vertical for mobile */
-    opacity: 1;
+ .hero {
+    background-size: 360px;
+    background-position: center 22%;
+    padding-bottom: 80px;
   }
 
   .hero-tagline {
     font-size: 16px;
-    margin-top: 280px; /* adjust tagline below logo for mobile */
+  }
+}
   }
 
   .products {
     padding: 40px 20px;
-  }
-
-  .product-card img {
-    max-width: 210px;
   }
 }
