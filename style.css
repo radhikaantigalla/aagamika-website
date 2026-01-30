@@ -34,18 +34,19 @@ body {
 /* HERO */
 .hero {
   height: 90vh;
-  background: url("./images/aagamika-logo.png") center 18% no-repeat;
+  background: url("./images/aagamika-logo.png") center 60% no-repeat;
   background-size: 620px;
   display: flex;
-  justify-content: center;
   align-items: flex-end;
-  padding-bottom: 120px;
+  justify-content: center;
+  padding-bottom: 60px;
 }
 
 .hero-tagline {
   font-size: 22px;
   opacity: 0.95;
-  text-align: below center;
+  margin-top: 0;
+  text-align: center;
 }
 
 /* SEO TEXT */
